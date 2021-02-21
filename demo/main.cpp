@@ -1,5 +1,6 @@
-#include <header.hpp>
+#include <calculating/random_hash_generator.hpp>
+#include <iostream>
+//#include <logging/logger.hpp>
+#include <string>
 
-int main() {
-
-}
+int main() { return 0; }
