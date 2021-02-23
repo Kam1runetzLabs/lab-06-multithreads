@@ -46,8 +46,9 @@ find_package(Threads)
 add_library(${PROJECT_NAME} STATIC
         ${CMAKE_CURRENT_SOURCE_DIR}/sources/source.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/include/header.hpp
-        include/logging/logger.hpp
-        include/calculating/random_hash_generator.hpp)
+        include/logging/async_logger_prototype.hpp
+        include/calculating/random_hash_generator.hpp
+        include/calculating/hash_brutforce.hpp include/logging/logger.hpp include/calculating/hash_data.hpp include/tools/blocking_queue.hpp)
 
 
 add_executable(demo

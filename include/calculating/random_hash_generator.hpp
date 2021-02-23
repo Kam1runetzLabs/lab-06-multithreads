@@ -7,6 +7,7 @@
 
 #include <picosha2.h>
 
+#include <calculating/hash_data.hpp>
 #include <string>
 #include <type_traits>
 #include <utility>
@@ -15,10 +16,6 @@ namespace hasher::calculating {
 template <typename str_generator_t>
 class random_hash_generator {
  public:
-  struct hash_data {
-    std::string src;
-    std::string sha256;
-  };
   explicit random_hash_generator(str_generator_t str_generator)
       : _str_generator(std::move(str_generator)) {}
 
