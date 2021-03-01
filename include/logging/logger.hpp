@@ -12,18 +12,19 @@
 
 namespace hasher::logging {
 struct log_message {
-  std::size_t thread_id;
+  // thread id
   calculating::hash_data data;
   std::size_t timestamp;
 };
 
 class log_message_handler {
  public:
-  log_message_handler();
-  ~log_message_handler();
-  std::string operator()(const log_message &message);
+  log_message_handler() = default;
 
- private:
+  ~log_message_handler() = default;
+
+  std::string operator()(const log_message &message) {
+  }
 };
 
 typedef async_logger_prototype<log_message, log_message_handler> logger;

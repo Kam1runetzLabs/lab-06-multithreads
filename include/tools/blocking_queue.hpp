@@ -81,9 +81,19 @@ class blocking_queue {
   }
 
   void stop() {
+    if (!_available) return;
     {
       std::unique_lock<std::mutex> lock(_mutex);
       _available = false;
+    }
+    _condition.notify_all();
+  }
+
+  void start() {
+    if (_available) return;
+    {
+      std::unique_lock<std::mutex> lock(_mutex);
+      _available = true;
     }
     _condition.notify_all();
   }
